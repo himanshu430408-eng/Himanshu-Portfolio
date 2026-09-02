@@ -1,0 +1,107 @@
+/* ==========================================
+   CYBER ARSENAL
+========================================== */
+
+.cyber{
+
+    padding:120px 0;
+
+}
+
+.cyber-grid{
+
+    width:min(1300px,92%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:28px;
+
+}
+
+.cyber-card{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(0,255,136,.15);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.35s;
+
+    backdrop-filter:blur(18px);
+
+}
+
+.cyber-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 30px rgba(0,255,136,.18);
+
+}
+
+.cyber-card h3{
+
+    color:white;
+
+    margin-bottom:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.cyber-card i{
+
+    color:var(--primary);
+
+}
+
+.tool-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+.tool-list span{
+
+    background:#0B1118;
+
+    border:1px solid rgba(0,255,136,.2);
+
+    color:var(--primary);
+
+    padding:10px 16px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.tool-list span:hover{
+
+    background:var(--primary);
+
+    color:black;
+
+    transform:scale(1.08);
+
+}

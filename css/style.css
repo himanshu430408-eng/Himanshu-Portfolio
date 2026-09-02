@@ -1,0 +1,429 @@
+/* ==========================================
+   HK CYBER OS v3.0
+   Global Styles
+========================================== */
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:var(--font-body);
+
+    overflow-x:hidden;
+
+}
+
+/* LINKS */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* LIST */
+
+ul{
+
+    list-style:none;
+
+}
+
+/* IMAGE */
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+/* BUTTON */
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+/* CONTAINER */
+
+.container{
+
+    width:min(1300px,92%);
+
+    margin:auto;
+
+}
+
+/* SECTION */
+
+section{
+
+    padding:110px 0;
+
+    position:relative;
+
+}
+
+/* ==========================
+SECTION TITLES
+========================== */
+
+.section-subtitle{
+
+    color:var(--primary);
+
+    font-family:var(--font-heading);
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+
+}
+
+.section-title{
+
+    font-size:48px;
+
+    font-family:var(--font-heading);
+
+    margin-bottom:60px;
+
+}
+
+/* ==========================
+SECTION HEADING
+========================== */
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-heading span{
+
+    display:block;
+
+    color:var(--primary);
+
+    font-family:var(--font-heading);
+
+    letter-spacing:3px;
+
+    margin-bottom:12px;
+
+}
+
+.section-heading h2{
+
+    color:white;
+
+    font-family:var(--font-heading);
+
+    font-size:48px;
+
+}
+
+/* BUTTONS */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:black;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow-green);
+
+}
+
+.btn-outline{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:black;
+
+}
+
+/* CARDS */
+
+.card{
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-green);
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#05070A;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#00cc6a;
+
+}
+
+/* MATRIX */
+
+#matrixCanvas{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    z-index:-2;
+
+}
+
+/* SELECTION */
+
+::selection{
+
+    background:var(--primary);
+
+    color:black;
+
+}
+/* ==========================================
+   LOGO STYLES
+========================================== */
+
+/* Navbar Logo */
+
+.logo img{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid var(--primary);
+
+    box-shadow:
+        0 0 10px rgba(0,255,136,.45),
+        0 0 20px rgba(0,255,136,.25);
+
+    transition:all .4s ease;
+
+}
+
+/* Hover Effect */
+
+.logo img:hover{
+
+    transform:rotate(360deg) scale(1.08);
+
+    box-shadow:
+        0 0 20px rgba(0,255,136,.75),
+        0 0 40px rgba(0,255,136,.45);
+
+}
+
+/* Loader Logo */
+
+.loader-logo{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid var(--primary);
+
+    box-shadow:
+        0 0 20px rgba(0,255,136,.55),
+        0 0 45px rgba(0,255,136,.30);
+
+    animation:pulse 2s infinite;
+
+}
+/* ==========================================
+   FIXED BACKGROUND LOGO
+========================================== */
+
+#bgLogo{
+
+    position:fixed;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:-2;
+
+    pointer-events:none;
+
+}
+
+#bgLogo img{
+
+    width:550px;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    opacity: 0.25;
+
+    filter:
+
+        drop-shadow(0 0 20px rgba(0,255,136,.45))
+
+        drop-shadow(0 0 60px rgba(0,255,136,.30));
+
+    animation:logoFloat 8s ease-in-out infinite,
+
+              logoGlow 3s ease-in-out infinite;
+
+}
+@keyframes logoFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes logoGlow{
+
+    0%,100%{
+
+        filter:
+
+        drop-shadow(0 0 20px rgba(0,255,136,.40))
+
+        drop-shadow(0 0 50px rgba(0,255,136,.20));
+
+    }
+
+    50%{
+
+        filter:
+
+        drop-shadow(0 0 40px rgba(0,255,136,.70))
+
+        drop-shadow(0 0 90px rgba(0,255,136,.40));
+
+    }
+
+}

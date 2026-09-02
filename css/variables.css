@@ -1,0 +1,63 @@
+/* ==========================================
+   HK CYBER OS v3.0
+   Global Variables
+========================================== */
+
+:root{
+
+    /* ===== COLORS ===== */
+
+    --bg:#05070A;
+    --bg-secondary:#0B1118;
+    --card-bg:#111827;
+    --glass:rgba(255,255,255,.05);
+
+    --primary:#00FF88;
+    --primary-dark:#00CC6A;
+
+    --secondary:#00D9FF;
+
+    --danger:#FF4D4D;
+    --warning:#FFC857;
+
+    --white:#FFFFFF;
+    --text:#E5E7EB;
+    --text-light:#94A3B8;
+
+    --border:#1F2937;
+
+    /* ===== FONTS ===== */
+
+    --font-heading:'Orbitron',sans-serif;
+    --font-body:'Poppins',sans-serif;
+    --font-terminal:'Courier New',monospace;
+
+    /* ===== FONT SIZE ===== */
+
+    --fs-xl:72px;
+    --fs-lg:48px;
+    --fs-md:28px;
+    --fs-sm:20px;
+    --fs-xs:16px;
+
+    /* ===== SPACING ===== */
+
+    --section-padding:100px;
+    --container-width:1300px;
+    --radius:16px;
+
+    /* ===== SHADOW ===== */
+
+    --shadow-green:
+        0 0 10px rgba(0,255,136,.35),
+        0 0 25px rgba(0,255,136,.25);
+
+    --shadow-blue:
+        0 0 10px rgba(0,217,255,.30),
+        0 0 25px rgba(0,217,255,.20);
+
+    /* ===== TRANSITION ===== */
+
+    --transition:.35s ease;
+
+}

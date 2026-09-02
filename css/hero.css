@@ -1,0 +1,652 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:110px;
+}
+
+.hero-container{
+    width:min(1300px,92%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:70px;
+    align-items:center;
+}
+
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.hero-left{
+    display:flex;
+    flex-direction:column;
+}
+
+.hero-greeting{
+    color:var(--primary);
+    font-size:22px;
+    margin-bottom:18px;
+    font-weight:600;
+}
+
+.hero-title{
+    font-family:var(--font-heading);
+    font-size:72px;
+    color:white;
+    line-height:1.1;
+}
+
+.hero-title span{
+    color:var(--primary);
+}
+
+.typing-text{
+    margin:25px 0;
+    min-height:45px;
+    font-size:34px;
+    color:var(--secondary);
+    font-weight:600;
+}
+
+.hero-description{
+    color:var(--text-light);
+    line-height:1.9;
+    font-size:17px;
+    max-width:680px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    margin:35px 0;
+}
+
+
+/* =========================
+   TERMINAL
+========================= */
+
+.terminal{
+    width:100%;
+    max-width:650px;
+    background:rgba(11,17,24,.88);
+    border:1px solid rgba(0,255,136,.25);
+    border-radius:16px;
+    overflow:hidden;
+
+    box-shadow:
+        0 0 30px rgba(0,255,136,.15);
+
+    backdrop-filter:blur(8px);
+}
+
+.terminal-header{
+    background:#111827;
+    padding:12px 18px;
+}
+
+.red,
+.yellow,
+.green{
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    display:inline-block;
+    margin-right:8px;
+}
+
+.red{
+    background:#ff5f57;
+}
+
+.yellow{
+    background:#febc2e;
+}
+
+.green{
+    background:#28c840;
+}
+
+#terminalText{
+    padding:22px;
+    color:#00FF88;
+    font-size:16px;
+    line-height:1.8;
+    font-family:var(--font-terminal);
+
+    /* FIXED TERMINAL HEIGHT */
+    height:270px;
+    min-height:270px;
+    max-height:270px;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    white-space:pre-wrap;
+
+    scrollbar-width:none;
+}
+
+#terminalText::-webkit-scrollbar{
+    display:none;
+}
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.hero-right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+/* MAIN PROFILE SYSTEM */
+
+.profile-system{
+    position:relative;
+
+    width:500px;
+    height:500px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card{
+    position:relative;
+    z-index:5;
+}
+
+
+/* CYBER OUTER RING */
+
+.profile-ring{
+    position:relative;
+
+    width:380px;
+    height:380px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:2px solid rgba(0,255,136,.35);
+
+    box-shadow:
+        0 0 20px rgba(0,255,136,.30),
+        0 0 60px rgba(0,255,136,.15);
+
+    animation:ringPulse 3s ease-in-out infinite;
+}
+
+
+/* ROTATING RING */
+
+.profile-ring::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:410px;
+    height:410px;
+
+    border-radius:50%;
+
+    border-top:2px solid var(--primary);
+    border-right:2px solid transparent;
+    border-bottom:2px solid var(--secondary);
+    border-left:2px solid transparent;
+
+    animation:rotateRing 12s linear infinite;
+
+}
+
+
+/* SECOND RING */
+
+.profile-ring::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:435px;
+    height:435px;
+
+    border-radius:50%;
+
+    border:1px dashed rgba(0,217,255,.35);
+
+    animation:rotateRingReverse 18s linear infinite;
+
+}
+
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.profile-image{
+
+    width:350px;
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid var(--primary);
+
+    position:relative;
+    z-index:3;
+
+    box-shadow:
+
+        0 0 20px rgba(0,255,136,.45),
+
+        0 0 60px rgba(0,255,136,.25),
+
+        0 0 100px rgba(0,255,136,.15);
+
+}
+
+
+/* =========================
+   INTERNSHIP STATUS
+========================= */
+
+.status-badge{
+
+    position:absolute;
+
+    bottom:-28px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    white-space:nowrap;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    background:rgba(5,7,10,.92);
+
+    color:var(--primary);
+
+    padding:11px 18px;
+
+    border-radius:40px;
+
+    border:1px solid rgba(0,255,136,.4);
+
+    font-size:14px;
+    font-weight:600;
+
+    box-shadow:
+        0 0 15px rgba(0,255,136,.25);
+
+}
+
+
+.status-dot{
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    box-shadow:
+        0 0 10px var(--primary);
+
+    animation:statusPulse 1.5s infinite;
+
+}
+
+
+/* =========================
+   FLOATING CYBER BADGES
+========================= */
+
+.cyber-badge{
+
+    position:absolute;
+
+    z-index:10;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    padding:10px 16px;
+
+    background:rgba(5,7,10,.88);
+
+    border:1px solid rgba(0,255,136,.35);
+
+    border-radius:30px;
+
+    color:#fff;
+
+    font-family:var(--font-terminal);
+
+    font-size:14px;
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:
+        0 0 15px rgba(0,255,136,.16);
+
+    transition:.35s ease;
+
+}
+
+
+.cyber-badge i{
+    color:var(--primary);
+    font-size:18px;
+}
+
+
+.cyber-badge:hover{
+
+    border-color:var(--primary);
+
+    color:var(--primary);
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 20px rgba(0,255,136,.45);
+
+}
+
+
+/* BADGE POSITIONS */
+
+.badge-linux{
+
+    top:15px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    animation:floatBadge1 4s ease-in-out infinite;
+
+}
+
+
+.badge-python{
+
+    top:45%;
+
+    left:-20px;
+
+    animation:floatBadge2 5s ease-in-out infinite;
+
+}
+
+
+.badge-security{
+
+    top:43%;
+
+    right:-55px;
+
+    animation:floatBadge3 4.5s ease-in-out infinite;
+
+}
+
+
+.badge-cloud{
+
+    bottom:-30px;
+    left:50%;
+    right:auto;
+
+    animation:floatCloud 4s ease-in-out infinite;
+
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes rotateRing{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+@keyframes rotateRingReverse{
+
+    from{
+        transform:rotate(360deg);
+    }
+
+    to{
+        transform:rotate(0deg);
+    }
+
+}
+
+
+@keyframes ringPulse{
+
+    0%,100%{
+        box-shadow:
+            0 0 20px rgba(0,255,136,.25);
+    }
+
+    50%{
+        box-shadow:
+            0 0 45px rgba(0,255,136,.45);
+    }
+
+}
+
+
+@keyframes statusPulse{
+
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.35;
+    }
+
+}
+
+
+@keyframes floatBadge1{
+
+    0%,100%{
+        transform:translateX(-50%) translateY(0);
+    }
+
+    50%{
+        transform:translateX(-50%) translateY(-10px);
+    }
+
+}
+
+
+@keyframes floatBadge2{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+
+@keyframes floatBadge3{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(12px);
+    }
+
+}
+
+
+@keyframes floatBadge4{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+
+@keyframes floatCloud{
+
+    0%,100%{
+        transform:translateX(-50%) translateY(0);
+    }
+
+    50%{
+        transform:translateX(-50%) translateY(8px);
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:1000px){
+
+    .hero-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-description{
+        margin:auto;
+    }
+
+    .hero-right{
+        margin-top:40px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .hero{
+        padding-top:100px;
+    }
+
+    .hero-title{
+        font-size:46px;
+    }
+
+    .typing-text{
+        font-size:24px;
+    }
+
+    .hero-description{
+        font-size:15px;
+    }
+
+    .profile-system{
+        width:330px;
+        height:390px;
+    }
+
+    .profile-ring{
+        width:250px;
+        height:250px;
+    }
+
+    .profile-ring::before{
+        width:275px;
+        height:275px;
+    }
+
+    .profile-ring::after{
+        width:295px;
+        height:295px;
+    }
+
+    .profile-image{
+        width:225px;
+        height:225px;
+    }
+
+    .cyber-badge{
+        font-size:11px;
+        padding:8px 11px;
+    }
+
+    .badge-python{
+        left:0;
+    }
+
+    .badge-security{
+        right:-5px;
+    }
+
+    .status-badge{
+        font-size:11px;
+        padding:9px 13px;
+    }
+
+}

@@ -1,0 +1,124 @@
+/* =========================================
+   HK CYBER OS - SCROLL REVEAL
+========================================= */
+
+.reveal{
+    opacity:0;
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+    will-change:opacity, transform;
+}
+
+/* FROM BOTTOM */
+
+.reveal-up{
+    transform:translateY(45px);
+}
+
+/* FROM LEFT */
+
+.reveal-left{
+    transform:translateX(-45px);
+}
+
+/* FROM RIGHT */
+
+.reveal-right{
+    transform:translateX(45px);
+}
+
+/* VISIBLE STATE */
+
+.reveal.active{
+    opacity:1;
+    transform:translate(0,0);
+}
+
+/* =========================================
+   HERO STABILITY FIX
+========================================= */
+
+/*
+Hero ko move nahi karenge.
+Terminal typing ke time profile stable rahega.
+*/
+
+.hero.reveal,
+.hero.reveal-up,
+.hero.reveal-left,
+.hero.reveal-right{
+    opacity:1 !important;
+    transform:none !important;
+}
+
+/* Profile system ko reveal animation affect nahi kare */
+
+.profile-system,
+.profile-card,
+.profile-ring,
+.profile-image{
+    transform-style:preserve-3d;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card.reveal,
+.education-card.reveal,
+.skill-card.reveal,
+.project-card.reveal,
+.certificate-card.reveal,
+.cyber-card.reveal{
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .reveal-up{
+        transform:translateY(25px);
+    }
+
+    .reveal-left{
+        transform:translateX(-20px);
+    }
+
+    .reveal-right{
+        transform:translateX(20px);
+    }
+
+    .reveal.active{
+        transform:translate(0,0);
+    }
+
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    .reveal,
+    .reveal-up,
+    .reveal-left,
+    .reveal-right{
+
+        opacity:1 !important;
+        transform:none !important;
+        transition:none !important;
+
+    }
+
+}

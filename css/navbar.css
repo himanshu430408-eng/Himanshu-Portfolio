@@ -1,0 +1,232 @@
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:80px;
+
+    background:rgba(5,7,10,.85);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(0,255,136,.15);
+
+    z-index:1000;
+
+}
+
+.nav-container{
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:white;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    font-family:var(--font-heading);
+
+}
+
+.logo img{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid var(--primary);
+
+    box-shadow:
+        0 0 10px rgba(0,255,136,.5),
+        0 0 25px rgba(0,255,136,.3);
+
+    transition:0.35s ease;
+
+}
+
+.logo img:hover{
+
+    transform:rotate(360deg) scale(1.08);
+
+    box-shadow:
+        0 0 20px rgba(0,255,136,.8),
+        0 0 40px rgba(0,255,136,.5);
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:32px;
+
+}
+
+.nav-links a{
+
+    color:#ddd;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.nav-right a{
+
+    color:white;
+
+    font-size:22px;
+
+    transition:.3s;
+
+}
+
+.nav-right a:hover{
+
+    color:var(--primary);
+
+}
+
+#themeToggle{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#111827;
+
+    color:var(--primary);
+
+}
+
+.menu-btn{
+
+    display:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:26px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+}
+
+/* =========================================
+   ACTIVE NAVBAR LINK
+========================================= */
+
+.nav-links a{
+    position:relative;
+    transition:
+        color .3s ease,
+        text-shadow .3s ease;
+}
+
+/* ACTIVE TEXT */
+
+.nav-links a.active{
+    color:var(--primary) !important;
+
+    text-shadow:
+        0 0 5px rgba(0,255,136,.8),
+        0 0 12px rgba(0,255,136,.55),
+        0 0 22px rgba(0,255,136,.35);
+}
+
+/* ACTIVE LINE */
+
+.nav-links a.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-8px;
+
+    transform:translateX(-50%);
+
+    width:70%;
+    height:2px;
+
+    border-radius:10px;
+
+    background:var(--primary);
+
+    box-shadow:
+        0 0 6px var(--primary),
+        0 0 15px rgba(0,255,136,.7);
+}
+
+/* HOVER */
+
+.nav-links a:hover{
+    color:var(--primary);
+}
